@@ -1,0 +1,23 @@
+.logo .navbar-brand {
+  font-size: 35px;
+  color: #000;
+  text-transform: uppercase;
+}
+.logo a::after {
+  content: "";
+
+  display: block;
+  width: 100%;
+  background-color: #000;
+  height: 2px;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+
+.logo a:hover::after {
+  transform: scale(1);
+}
+.logo a:hover {
+  color: #595c5d;
+  cursor: pointer;
+}
