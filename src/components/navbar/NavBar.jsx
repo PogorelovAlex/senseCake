@@ -20,15 +20,15 @@ function NavBar() {
   const classes = useStyles()
   return (
     <Grid container Maxwidth="lg" spacing={3}>
-      <Grid item xs={3}> 
-        
+      <Grid item xs={3}>
         <Logo />
         <Menu />
       </Grid>
-      <Grid item xs={9} justify="flex-end">
-        <Categories />
-       
-      </Grid>
+      <Hidden smDown>
+        <Grid item xs={9} justify="flex-end">
+          <Categories />
+        </Grid>
+      </Hidden>
     </Grid>
   )
 }
