@@ -6,6 +6,7 @@ import Container from "@material-ui/core/Container"
 import Categories from "../navbar/categories/Categories"
 import Logo from "../navbar/logo/Logo"
 import "./NavBar.scss"
+import Menu from "./menu/Menu"
 
 // import'../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,11 +20,14 @@ function NavBar() {
   const classes = useStyles()
   return (
     <Grid container Maxwidth="lg" spacing={3}>
-      <Grid item xs={3}>
+      <Grid item xs={3}> 
+        
         <Logo />
+        <Menu />
       </Grid>
       <Grid item xs={9} justify="flex-end">
         <Categories />
+       
       </Grid>
     </Grid>
   )
