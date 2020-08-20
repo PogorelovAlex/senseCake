@@ -6,10 +6,11 @@ import AccordionDetails from "@material-ui/core/AccordionDetails"
 import Typography from "@material-ui/core/Typography"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 import Hidden from "@material-ui/core/Hidden"
+import MenuButton from "./MenuButton"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100%",
+    width: "20%",
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -22,22 +23,16 @@ export default function SimpleAccordion() {
 
   return (
     <div className={classes.root}>
-      <Hidden smUp>
+      <Hidden mdUp>
         <Accordion>
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
+          // expandIcon={<ExpandMoreIcon />}
+          // aria-controls="panel1a-content"
+          // id="panel1a-header"
           >
-            <Typography className={classes.heading}>Accordion 1</Typography>
+            <MenuButton />
           </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
-          </AccordionDetails>
+          <AccordionDetails></AccordionDetails>
         </Accordion>
       </Hidden>
     </div>
