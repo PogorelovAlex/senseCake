@@ -6,7 +6,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails"
 import Typography from "@material-ui/core/Typography"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 import Hidden from "@material-ui/core/Hidden"
-import MenuButton from "./MenuButton"
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,7 +30,6 @@ export default function SimpleAccordion() {
           // aria-controls="panel1a-content"
           // id="panel1a-header"
           >
-            <MenuButton />
           </AccordionSummary>
           <AccordionDetails></AccordionDetails>
         </Accordion>
