@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid"
 import IconButton from "@material-ui/core/IconButton"
 import MenuOutlinedIcon from "@material-ui/icons/MenuOutlined"
 import Hidden from "@material-ui/core/Hidden"
+import { Link } from "gatsby"
 
 
 import Categories from "../navbar/categories/Categories"
@@ -16,8 +17,11 @@ import "./NavBar.scss"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    paddingTop: '20px',
   },
+  headerMargin : {
+    marginBottom:'20px'
+  }
 }))
 
 function NavBar() {
@@ -32,7 +36,8 @@ function NavBar() {
         <Grid item xs={9} 
         direction="row"
         justify="flex-end"
-        alignItems="baseline">
+        alignItems="baseline"
+        className= {classes.headerMargin}>
          <Hidden smDown> <Categories />
          </Hidden>
         <Hidden mdUp>
@@ -42,9 +47,10 @@ function NavBar() {
          justify="flex-start"
          alignItems="flex-end">
            
-           <IconButton aria-label="MenuOutlined">
+           <IconButton className={classes.root} aria-label="MenuOutlined">
         <MenuOutlinedIcon />
-      </IconButton> </Grid>
+      </IconButton> 
+       </Grid>
       </Hidden>
        </Grid>
       
