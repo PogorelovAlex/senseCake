@@ -1,11 +1,22 @@
-import React,{useState} from "react"
+import React, { useState } from "react"
+import classNames from "classnames"
 
-function MenuList({ item,onClickItem }) {
+function MenuList({ item, onClickItem }) {
+  const [activeItem, setActiveItem] = React.useState(null)
+
+  const onSelectItem = index => {
+    setActiveItem(index)
+  }
+// {activeItem === index ? " active" : ""}
   return (
-    <ul className="navbar-nav">
-     {item.map((name,index) => (
-        <li onClick = {()=>onClickItem(name)} key={`${name}_${index}`} className="nav-item" >
-          <a className="nav-link" href='#'>
+    <ul className="navbar-nav ">
+      {item.map((name, index) => (
+        <li
+          onClick={() => onSelectItem(index)}
+          key={`${name}_${index}`}
+          className="nav-item" 
+        >
+          <a className="nav-link " href="#">
             {name}
           </a>
         </li>
