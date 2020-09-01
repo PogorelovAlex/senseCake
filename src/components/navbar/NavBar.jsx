@@ -1,14 +1,17 @@
-import React from "react"
+import React, { useState } from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import IconButton from "@material-ui/core/IconButton"
 import MenuOutlinedIcon from "@material-ui/icons/MenuOutlined"
+
+import MenuList from "./categories/MenuList"
 import Hidden from "@material-ui/core/Hidden"
 import { Link } from "gatsby"
 
 import Categories from "../navbar/categories/Categories"
 import Logo from "../navbar/logo/Logo"
-import Menu from "./menu/Menu"
+
+import MenuButton from "./menu/MenuButton"
 
 import "./NavBar.scss"
 
@@ -23,11 +26,11 @@ const useStyles = makeStyles(theme => ({
 
 function NavBar() {
   const classes = useStyles()
+  const [visiblePopup, setVisiblePopup] = React.useState(false)
   return (
     <Grid container Maxwidth="lg" spacing={3}>
       <Grid item xs={3}>
         <Logo />
-        <Menu />
       </Grid>
 
       <Grid
@@ -51,12 +54,33 @@ function NavBar() {
             justify="flex-start"
             alignItems="flex-end"
           >
-            <IconButton className={classes.root} aria-label="MenuOutlined">
+            <IconButton
+              onClick={() => setVisiblePopup(!visiblePopup)}
+              className={classes.root}
+              aria-label="MenuOutlined"
+            >
               <MenuOutlinedIcon />
             </IconButton>
           </Grid>
         </Hidden>
       </Grid>
+      <Hidden mdUp>
+        <Grid item xs={12}>
+          {visiblePopup && (
+            <MenuList
+              className="menulist-row"
+              item={[
+                "Контакты",
+                "О нас",
+                "Кафе",
+                "Торты на заказ",
+                "Начинки",
+                "Главная",
+              ]}
+            />
+          )}
+        </Grid>
+      </Hidden>
     </Grid>
   )
 }
