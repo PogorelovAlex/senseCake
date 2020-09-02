@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 
-function MenuList({ item, onClickItem }) {
+function MenuListRow({ item, onClickItem }) {
   const [activeItem, setActiveItem] = React.useState(null)
 
   const onSelectItem = index => {
@@ -9,12 +9,12 @@ function MenuList({ item, onClickItem }) {
   }
 
   return (
-    <ul className="navbar-nav ">
+    <ul className="navbar-nav-row ">
       {item.map((name, index) => (
         <li
           onClick={() => onSelectItem(index)}
           key={`${name}_${index}`}
-          className = "nav-item nav-link "
+          className = "menulist-row nav-link "
         >
           <a className={activeItem === index ? "active " : ""} href="#" >
             {name}
@@ -25,4 +25,4 @@ function MenuList({ item, onClickItem }) {
   )
 }
 
-export default MenuList
+export default MenuListRow

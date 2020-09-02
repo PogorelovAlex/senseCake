@@ -67,9 +67,32 @@
 }
 
 .menulist-row {
-  .nav-bar {
-    .nav-item {
-      float: none;
-    }
-  }
+  text-transform: uppercase;
+  float: none;
+  font-size: 0.9rem;
+}
+.menulist-row a:hover {
+  color: #444343;
+  -webkit-transform: scale(1.2);
+  transition: all 0.3s;
+  transition-timing-function: cubic-bezier(0.58, 0.3, 0.005, 1);
+}
+.menulist-row a::after {
+  content: "";
+  display: flex;
+  width: 100%;
+  background-color: #595c5d;
+  height: 1px;
+  font-size: 20px;
+  transform: scale(0);
+  transition: all 0.8s;
+  -webkit-transition: 0.4s;
+}
+
+.menulist-row a:hover::after {
+  transform: scale(1);
+}
+.navbar-nav-row {
+  list-style: none;
+  padding:0;
 }

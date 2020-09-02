@@ -9,9 +9,9 @@ import Hidden from "@material-ui/core/Hidden"
 import { Link } from "gatsby"
 
 import Categories from "../navbar/categories/Categories"
+import CategoriesRow from "../navbar/categories/CategoriesRow"
 import Logo from "../navbar/logo/Logo"
 
-import MenuButton from "./menu/MenuButton"
 
 import "./NavBar.scss"
 
@@ -65,19 +65,9 @@ function NavBar() {
         </Hidden>
       </Grid>
       <Hidden mdUp>
-        <Grid item xs={12}>
+        <Grid  item xs={12}>
           {visiblePopup && (
-            <MenuList
-              className="menulist-row"
-              item={[
-                "Контакты",
-                "О нас",
-                "Кафе",
-                "Торты на заказ",
-                "Начинки",
-                "Главная",
-              ]}
-            />
+            <CategoriesRow />
           )}
         </Grid>
       </Hidden>

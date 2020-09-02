@@ -1,17 +1,22 @@
 import React from "react"
-import MenuList from "./MenuList"
+import MenuListRow from "./MenuListRow"
 
 
-export default function Categories() {
+
+
+export default function CategoriesRow() {
+
   return (
-    <MenuList
+    <MenuListRow
+    
       item={[
+        "Главная",
         "Контакты",
         "О нас",
         "Кафе",
         "Торты на заказ",
         "Начинки",
-        "Главная",
+        
       ]} 
     />
   )
