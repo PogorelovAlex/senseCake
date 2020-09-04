@@ -1,6 +1,7 @@
 import React from "react"
 // import { Link } from "gatsby"
 import Header from "../components/header/Header"
+import Footer from "../components/footer/Footer"
 import Container from "@material-ui/core/Container"
 import SwiperCake from "../components/swiper/SwiperCake"
 import Album from "../components/album/Album"
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <SwiperCake />
       <Album />
+      <Footer />
     </Container>
   )
 }
